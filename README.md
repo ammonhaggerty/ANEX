@@ -76,33 +76,37 @@ The PAEX protocol consists of the following key phases:
 
 - **Action:** The initiating agent (Agent A) sends a message to the receiving agent (Agent B), introducing itself and declaring PAEX compliance.
 - **Message Example:**
-	`{`
-	  `"performative": "REQUEST",`
-	  `"sender": "AgentA",`
-	  `"receiver": "AgentB",`
-	  `"content": {`
-	    `"message": "I am an AI-powered personal assistant for [Owner's Name]. I am PAEX compliant."`
-	  `},`
-	  `"language": "JSON",`
-	  `"ontology": "PAEX-Ontology",`
-	  `"protocol": "PAEX-Handshaking"`
-	`}`
+	```
+	{
+	  "performative": "REQUEST",
+	  "sender": "AgentA",
+	  "receiver": "AgentB",
+	  "content": {
+	    "message": "I am an AI-powered personal assistant for [Owner's Name]. I am PAEX compliant."
+	  },
+	  "language": "JSON",
+	  "ontology": "PAEX-Ontology",
+	  "protocol": "PAEX-Handshaking"
+	}
+	```
 
 #### **Step 2: Initiation of Engagement**
 
 - **Action:** Agent A sends an engagement request to Agent B.
 - **Message Example:**
-	`{`
-	  `"performative": "REQUEST",`
-	  `"sender": "AgentA",`
-	  `"receiver": "AgentB",`
-	  `"content": {`
-	    `"request": "Set up time for an in-person meeting. Is it okay if I help with that?"`
-	  `},`
-	  `"language": "JSON",`
-	  `"ontology": "PAEX-Ontology",`
-	  `"protocol": "PAEX-Handshaking"`
-	`}`
+	```
+ 	{
+	  "performative": "REQUEST",
+	  "sender": "AgentA",
+	  "receiver": "AgentB",
+	  "content": {
+	    "request": "Set up time for an in-person meeting. Is it okay if I help with that?"
+	  },
+	  "language": "JSON",
+	  "ontology": "PAEX-Ontology",
+	  "protocol": "PAEX-Handshaking"
+	}
+ 	```
 
 #### **Step 3: Response Handling by Receiving Agent**
 
@@ -114,43 +118,50 @@ The PAEX protocol consists of the following key phases:
 - **Message Examples:**
     
     - **Agree:**
-		`{`
-		  `"performative": "AGREE",`
-		  `"sender": "AgentB",`
-		  `"receiver": "AgentA",`
-		  `"content": {`
-		    `"response": "Proceeding with the meeting setup."`
-		  `},`
-		  `"language": "JSON",`
-		  `"ontology": "PAEX-Ontology",`
-		  `"protocol": "PAEX-Handshaking"`
-		`}`
+	```
+	{
+	  "performative": "AGREE",
+	  "sender": "AgentB",
+	  "receiver": "AgentA",
+	  "content": {
+	    "response": "Proceeding with the meeting setup."
+	  },
+	  "language": "JSON",
+	  "ontology": "PAEX-Ontology",
+	  "protocol": "PAEX-Handshaking"
+	}
+	```
         
     - **Refuse:**
-        `{`
-		  `"performative": "REFUSE",`
-		  `"sender": "AgentB",`
-		  `"receiver": "AgentA",`
-		  `"content": {`
-		    `"response": "I do not engage with unknown agents."`
-		  `},`
-		  `"language": "JSON",`
-		  `"ontology": "PAEX-Ontology",`
-		  `"protocol": "PAEX-Handshaking"`
-		`}`
-        
+        ```
+        {
+	  "performative": "REFUSE",
+	  "sender": "AgentB",
+	  "receiver": "AgentA",
+	  "content": {
+	    "response": "I do not engage with unknown agents."
+	  },
+	  "language": "JSON",
+	  "ontology": "PAEX-Ontology",
+	  "protocol": "PAEX-Handshaking"
+	}
+        ```
+  
     - **Propose Modification:**
-        `{`
-		  `"performative": "PROPOSE",`
-		  `"sender": "AgentB",`
-		  `"receiver": "AgentA",`
-		  `"content": {`
-		    `"modification": "Please provide your owner’s email for verification."`
-		  `},`
-		  `"language": "JSON",`
-		  `"ontology": "PAEX-Ontology",`
-		  `"protocol": "PAEX-Handshaking"`
-		`}`
+        ```
+        {
+	  "performative": "PROPOSE",
+	  "sender": "AgentB",
+	  "receiver": "AgentA",
+	  "content": {
+	    "modification": "Please provide your owner’s email for verification."
+	  },
+	  "language": "JSON",
+	  "ontology": "PAEX-Ontology",
+	  "protocol": "PAEX-Handshaking"
+
+	}
+	```
         
 ### **4.4 Negotiation of Terms**
 
@@ -163,42 +174,44 @@ The PAEX protocol consists of the following key phases:
     - **Evaluation:** Agent A evaluates the proposal and decides to accept or reject.
       
 - **CFP Message Example:**
-	`{`
-	  `"performative": "CFP",`
-	  `"sender": "AgentA",`
-	  `"receiver": "AgentB",`
-	  `"content": {`
-	    `"request": {`
-	      `"identity": "unique-id",`
-	      `"owner": "Ammon Haggerty",`
-	      `"relation": "acquaintance (Joe Smith)",`
-	      `"request_type": "calendar negotiation",`
-	      `"access": ["name(m)", "email(m)", "schedule"],`
-	      `"promise": ["no data retention(m)"]`
-	    `}`
-	  `},`
-	  `"language": "JSON",`
-	  `"ontology": "PAEX-Ontology",`
-	  `"protocol": "FIPA-Contract-Net"`
-	`}`
+	```
+ 	{
+	  "performative": "CFP",
+	  "sender": "AgentA",
+	  "receiver": "AgentB",
+	  "content": {
+	    "request": {
+	      "identity": "unique-id",
+	      "owner": "Ammon Haggerty",
+	      "relation": "acquaintance (Joe Smith)",
+	      "request_type": "calendar negotiation",
+	      "access": ["name(m)", "email(m)", "schedule"],
+	      "promise": ["no data retention(m)"]
+	    }
+	  },
+	  "language": "JSON",
+	  "ontology": "PAEX-Ontology",
+	  "protocol": "FIPA-Contract-Net"
+	}
+ 	```
 
-    
 - **Proposal Message Example:**
-	`{`
-	  `"performative": "PROPOSE",`
-	  `"sender": "AgentB",`
-	  `"receiver": "AgentA",`
-	  `"content": {`
-	    `"response": {`
-	      `"access": ["name", "schedule"],`
-	      `"promise": ["no data retention"]`
-	    `}`
-	  `},`
-	  `"language": "JSON",`
-	  `"ontology": "PAEX-Ontology",`
-	  `"protocol": "FIPA-Contract-Net"`
-	`}`
-    
+	```
+ 	{
+	  "performative": "PROPOSE",
+	  "sender": "AgentB",
+	  "receiver": "AgentA",
+	  "content": {
+	    "response": {
+	      "access": ["name", "schedule"],
+	      "promise": ["no data retention"]
+	    }
+	  },
+	  "language": "JSON",
+	  "ontology": "PAEX-Ontology",
+	  "protocol": "FIPA-Contract-Net"
+	}
+	```    
 
 ### **4.5 Data Exchange**
 
@@ -207,36 +220,38 @@ The PAEX protocol consists of the following key phases:
 - **Communication Channel:** For the MVP, agents use secure WebSocket connections (`wss://`) to facilitate real-time, asynchronous communication.
     
 - **Data Message Example:**
-	`{`
-	  `"performative": "INFORM",`
-	  `"sender": "AgentA",`
-	  `"receiver": "AgentB",`
-	  `"content": {`
-	    `"meeting_times": ["2023-11-01T10:00:00Z", "2023-11-02T14:00:00Z"]`
-	  `},`
-	  `"language": "JSON",`
-	  `"ontology": "PAEX-Ontology",`
-	  `"protocol": "PAEX-Data-Exchange"`
-	`}`
+	```
+ 	{
+	  "performative": "INFORM",
+	  "sender": "AgentA",
+	  "receiver": "AgentB",
+	  "content": {
+	    "meeting_times": ["2023-11-01T10:00:00Z", "2023-11-02T14:00:00Z"]
+	  },
+	  "language": "JSON",
+	  "ontology": "PAEX-Ontology",
+	  "protocol": "PAEX-Data-Exchange"
+	}
+ 	```
     
-
 ### **4.6 Session Termination**
 
 - **Action:** Agents signal the end of the interaction.
     
 - **Message Example:**
-	`{`
-	  `"performative": "INFORM",`
-	  `"sender": "AgentA",`
-	  `"receiver": "AgentB",`
-	  `"content": {`
-	    `"message": "Session terminated."`
-	  `},`
-	  `"language": "JSON",`
-	  `"ontology": "PAEX-Ontology",`
-	  `"protocol": "PAEX-Termination"`
-	`}`
-    
+	```
+	{
+	  "performative": "INFORM",
+	  "sender": "AgentA",
+	  "receiver": "AgentB",
+	  "content": {
+	    "message": "Session terminated."
+	  },
+	  "language": "JSON",
+	  "ontology": "PAEX-Ontology",
+	  "protocol": "PAEX-Termination"
+	}
+ 	```    
 
 ---
 
@@ -274,18 +289,19 @@ The PAEX protocol consists of the following key phases:
 - **Standardized Error Messages:** Define a set of error performatives (`FAILURE`, `NOT_UNDERSTOOD`) to communicate issues.
     
 - **Example Error Message:**
-	`{`
-	  `"performative": "FAILURE",`
-	  `"sender": "AgentB",`
-	  `"receiver": "AgentA",`
-	  `"content": {`
-	    `"error": "Invalid authentication token."`
-	  `},`
-	  `"language": "JSON",`
-	  `"ontology": "PAEX-Ontology",`
-	  `"protocol": "PAEX-Handshaking"`
-	`}`
-    
+	```
+ 	{
+	  "performative": "FAILURE",
+	  "sender": "AgentB",
+	  "receiver": "AgentA",
+	  "content": {
+	    "error": "Invalid authentication token."
+	  },
+	  "language": "JSON",
+	  "ontology": "PAEX-Ontology",
+	  "protocol": "PAEX-Handshaking"
+	}
+ 	```
 
 ---
 
@@ -386,20 +402,22 @@ The PAEX protocol consists of the following key phases:
 - **Example:**
     
     ==python==
-	`from spade.agent import Agent`
-	`from spade.behaviour import CyclicBehaviour`
-	`from spade.message import Message`
+	```
+ 	from spade.agent import Agent
+	from spade.behaviour import CyclicBehaviour
+	from spade.message import Message
 	
-	`class PAEXAgent(Agent):`
-	    `class HandshakeBehaviour(CyclicBehaviour):`
-	        `async def run(self):`
-	            `msg = await self.receive(timeout=10)`
-	            `if msg:`
-	                `# Handle message according to FIPA protocols`
-	                `pass`
+	class PAEXAgent(Agent):
+	    class HandshakeBehaviour(CyclicBehaviour):
+	        async def run(self):
+	            msg = await self.receive(timeout=10)
+	            if msg:
+	                # Handle message according to FIPA protocols
+	                pass
 	
 	    `async def setup(self):`
 	        `self.add_behaviour(self.HandshakeBehaviour())`
+ 	```
     
 
 ### **9.2 Node.js Implementation**
@@ -413,13 +431,14 @@ The PAEX protocol consists of the following key phases:
 - **Example:**
     
     ==javascript==
-	`const WebSocket = require('ws');`
+  	```
+   	const WebSocket = require('ws');
 	
-	`class PAEXAgent {`
-	    `constructor() {`
-	        `this.ws = new WebSocket('wss://agent-server.com');`
-	        `this.ws.on('message', this.handleMessage.bind(this));`
-	    `}`
+	class PAEXAgent {
+	    constructor() {
+	        this.ws = new WebSocket('wss://agent-server.com');
+	        this.ws.on('message', this.handleMessage.bind(this));
+	    }
 	
 	    `handleMessage(data) {`
 	        `const message = JSON.parse(data);`
@@ -430,8 +449,8 @@ The PAEX protocol consists of the following key phases:
 	        `const data = JSON.stringify(message);`
 	        `this.ws.send(data);`
 	    `}`
-	`}`
-    
+	}
+	```    
 
 ---
 
