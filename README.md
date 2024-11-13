@@ -280,9 +280,15 @@ The PAEX protocol consists of the following key phases:
 
 ### **5.4 Ontology Definition**
 
-- **Purpose:** Provides a shared vocabulary for agents to interpret message content.
-- **Implementation:** Define a PAEX ontology with common terms used in agent interactions (e.g., `request_type`, `access`, `promise`).
-- **Future Enhancements:** Expand the ontology to cover more complex interactions and domain-specific terms.
+- **Purpose:** The ontology provides a shared vocabulary and semantic framework that both agents use to interpret the content of messages consistently.
+- **Implementation:** Proposed basic PAEX ontology with common terms used in agent interactions:
+	- `identity`
+	- `owner`
+	- `relation`
+	- `request_type`
+	- `access`
+	- `promise`
+- **Expansion:** While the initial ontology is kept simple to facilitate basic communication, it is designed to be extensible for future enhancements, allowing for more complex interactions and domain-specific terms.
 
 ### **5.5 Error Handling**
 
@@ -415,8 +421,8 @@ The PAEX protocol consists of the following key phases:
 	                # Handle message according to FIPA protocols
 	                pass
 	
-	    `async def setup(self):`
-	        `self.add_behaviour(self.HandshakeBehaviour())`
+	    async def setup(self):
+	        self.add_behaviour(self.HandshakeBehaviour())
  	```
     
 
@@ -440,15 +446,15 @@ The PAEX protocol consists of the following key phases:
 	        this.ws.on('message', this.handleMessage.bind(this));
 	    }
 	
-	    `handleMessage(data) {`
-	        `const message = JSON.parse(data);`
-	        `// Handle message according to FIPA protocols`
-	    `}`
+	    handleMessage(data) {
+	        const message = JSON.parse(data);
+	        // Handle message according to FIPA protocols
+	    }
 	
-	    `sendMessage(message) {`
-	        `const data = JSON.stringify(message);`
-	        `this.ws.send(data);`
-	    `}`
+	    sendMessage(message) {
+	        const data = JSON.stringify(message);
+	        this.ws.send(data);
+	    }
 	}
 	```    
 
