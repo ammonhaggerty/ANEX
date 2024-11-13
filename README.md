@@ -368,6 +368,10 @@ The PAEX protocol consists of the following key phases:
 - **Efficient Serialization:** Consider migrating to Protocol Buffers or CBOR for performance.
 - **Load Balancing:** Implement mechanisms to distribute agent workloads efficiently.
 
+### **7.6 Human and group support**
+- **Support for recipients who are non-compliant:** Allow for initial engagements to branch from a simple verbal or text-based confirmation.
+- **Group support:** Including humans and agents (both compliant and non-compliant).
+
 ---
 
 ## **8. Solutions for Async and Streaming Data**
