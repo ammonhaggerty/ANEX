@@ -76,7 +76,7 @@ The PAEX protocol consists of the following key phases:
 
 #### **Step 1: Self-Identification and Protocol Compliance Declaration**
 
-- **Action:** The initiating agent (Agent A) sends a message to the receiving agent (Agent B), introducing itself and declaring PAEX compliance.
+- **Action:** The initiating agent (Agent A) sends a message to the receiving agent (Agent B), introducing itself and declaring PAEX compliance. Proposed compact compliance indicator: [PA*].
 - **Message Example:**
 	```
 	{
@@ -84,7 +84,7 @@ The PAEX protocol consists of the following key phases:
 	  "sender": "AgentA",
 	  "receiver": "AgentB",
 	  "content": {
-	    "message": "I am an AI-powered personal assistant for [Owner's Name]. I am PAEX compliant."
+	    "message": "Hi, I'm [Owner's Name]'s AI assistant [PA*]."
 	  },
 	  "language": "JSON",
 	  "ontology": "PAEX-Ontology",
@@ -102,7 +102,7 @@ The PAEX protocol consists of the following key phases:
 	  "sender": "AgentA",
 	  "receiver": "AgentB",
 	  "content": {
-	    "request": "Set up time for an in-person meeting. Is it okay if I help with that?"
+	    "request": "Set up time for an in-person meeting. Ok to continue?"
 	  },
 	  "language": "JSON",
 	  "ontology": "PAEX-Ontology",
