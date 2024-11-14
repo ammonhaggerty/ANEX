@@ -6,7 +6,7 @@ The **Personal Agent Exchange Protocol (PAEX)** is a universal handshake and dat
 
 This specification leverages the **Foundation for Intelligent Physical Agents (FIPA)** standards as the underlying protocol to facilitate agent communication. By leveraging FIPA standards, the PAEX protocol can facilitate secure and efficient communication between Personal Agents. While this initial draft focuses on core features like handshake, negotiation, and data exchange, the design accommodates future enhancements in security, scalability, and functionality.
 
-<img width="1702" alt="PAEX flows" src="https://github.com/user-attachments/assets/8e2c61aa-c21f-453d-abaf-7b9fa88abc79">
+<img width="1481" alt="PAEX flows" src="https://github.com/user-attachments/assets/54399dd3-5769-410d-b29a-996d8cd8c236">
 
 ---
 
