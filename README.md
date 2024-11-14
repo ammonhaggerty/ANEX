@@ -134,9 +134,9 @@ The PAEX protocol consists of the following key phases:
 	}
 	```
         
-    - **Refuse:**
-        ```
-        {
+	- **Refuse:**
+	```
+	{
 	  "performative": "REFUSE",
 	  "sender": "AgentB",
 	  "receiver": "AgentA",
@@ -147,11 +147,11 @@ The PAEX protocol consists of the following key phases:
 	  "ontology": "PAEX-Ontology",
 	  "protocol": "PAEX-Handshaking"
 	}
-        ```
-  
-    - **Propose Modification:**
-        ```
-        {
+	```
+
+	- **Propose Modification:**
+	```
+	{
 	  "performative": "PROPOSE",
 	  "sender": "AgentB",
 	  "receiver": "AgentA",
@@ -161,7 +161,6 @@ The PAEX protocol consists of the following key phases:
 	  "language": "JSON",
 	  "ontology": "PAEX-Ontology",
 	  "protocol": "PAEX-Handshaking"
-
 	}
 	```
         
