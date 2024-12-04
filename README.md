@@ -1,12 +1,12 @@
-# Personal Agent Exchange Protocol (PAEX) Draft
+# Agent Negotiation & Exchange Protocol (ANEX) Draft
 
 ## **1. Introduction**
 
-The **Personal Agent Exchange Protocol (PAEX)** is a universal handshake and data exchange protocol designed for AI-powered Personal Agents (PAs). These agents act as proxies for their owners—individuals or entities—and are trained to make decisions on their behalf, sometimes through human-in-the-loop collaboration. The goal of PAEX is to enable any PA engaging with another PA to identify protocol compliance, establish terms, and define the scope for an exchange of data and/or value.
+The **Agent Negotiation & Exchange Protocol (ANEX)** is a universal handshake and data exchange protocol designed for AI-powered Personal Agents (PAs). These agents act as proxies for their owners—individuals or entities—and are trained to make decisions on their behalf, sometimes through human-in-the-loop collaboration. The goal of ANEX is to enable any PA engaging with another PA to identify protocol compliance, establish terms, and define the scope for an exchange of data and/or value.
 
-This specification leverages the **Foundation for Intelligent Physical Agents (FIPA)** standards as the underlying protocol to facilitate agent communication. By leveraging FIPA standards, the PAEX protocol can facilitate secure and efficient communication between Personal Agents. While this initial draft focuses on core features like handshake, negotiation, and data exchange, the design accommodates future enhancements in security, scalability, and functionality.
+This specification leverages the **Foundation for Intelligent Physical Agents (FIPA)** standards as the underlying protocol to facilitate agent communication. By leveraging FIPA standards, the `ANEX` protocol can facilitate secure and efficient communication between Personal Agents. While this initial draft focuses on core features like handshake, negotiation, and data exchange, the design accommodates future enhancements in security, scalability, and functionality.
 
-<img width="1481" alt="PAEX flows" src="https://github.com/user-attachments/assets/54399dd3-5769-410d-b29a-996d8cd8c236">
+<img width="1481" alt="ANEX flows" src="https://github.com/user-attachments/assets/54399dd3-5769-410d-b29a-996d8cd8c236">
 
 ---
 
@@ -40,7 +40,7 @@ This specification leverages the **Foundation for Intelligent Physical Agents (F
 ### **3.3 Interaction Protocols**
 
 - **Definition:** Standardized sequences for common interaction patterns, such as requesting actions, negotiating terms, and exchanging information.
-- **Relevant Protocols for PAEX:**
+- **Relevant Protocols for ANEX:**
     - **FIPA-Request Interaction Protocol:** For initiating requests.
     - **FIPA-Contract-Net Interaction Protocol:** For negotiation scenarios.
     - **FIPA-Subscribe Interaction Protocol:** For continuous updates or streaming data.
@@ -51,7 +51,7 @@ This specification leverages the **Foundation for Intelligent Physical Agents (F
 
 ### **4.1 Overview**
 
-The PAEX protocol consists of the following key phases:
+The ANEX protocol consists of the following key phases:
 
 1. **Self-Identification and Protocol Compliance Declaration**
 2. **Initiation of Engagement**
@@ -76,7 +76,7 @@ The PAEX protocol consists of the following key phases:
 
 #### **Step 1: Self-Identification and Protocol Compliance Declaration**
 
-- **Action:** The initiating agent (Agent A) sends a message to the receiving agent (Agent B), introducing itself and declaring PAEX compliance. Proposed compact compliance indicator: [PA*].
+- **Action:** The initiating agent (Agent A) sends a message to the receiving agent (Agent B), introducing itself and declaring ANEX compliance. Proposed compact compliance indicator: [PA*].
 - **Message Example:**
 	```
 	{
@@ -87,8 +87,8 @@ The PAEX protocol consists of the following key phases:
 	    "message": "Hi, I'm [Owner's Name]'s AI assistant [PA*]."
 	  },
 	  "language": "JSON",
-	  "ontology": "PAEX-Ontology",
-	  "protocol": "PAEX-Handshaking"
+	  "ontology": "ANEX-Ontology",
+	  "protocol": "ANEX-Handshaking"
 	}
 	```
 
@@ -105,8 +105,8 @@ The PAEX protocol consists of the following key phases:
 	    "request": "Set up time for an in-person meeting. Ok to continue?"
 	  },
 	  "language": "JSON",
-	  "ontology": "PAEX-Ontology",
-	  "protocol": "PAEX-Handshaking"
+	  "ontology": "ANEX-Ontology",
+	  "protocol": "ANEX-Handshaking"
 	}
  	```
 
@@ -129,8 +129,8 @@ The PAEX protocol consists of the following key phases:
 	    "response": "Proceeding with the meeting setup."
 	  },
 	  "language": "JSON",
-	  "ontology": "PAEX-Ontology",
-	  "protocol": "PAEX-Handshaking"
+	  "ontology": "ANEX-Ontology",
+	  "protocol": "ANEX-Handshaking"
 	}
 	```
         
@@ -144,8 +144,8 @@ The PAEX protocol consists of the following key phases:
 	    "response": "I do not engage with unknown agents."
 	  },
 	  "language": "JSON",
-	  "ontology": "PAEX-Ontology",
-	  "protocol": "PAEX-Handshaking"
+	  "ontology": "ANEX-Ontology",
+	  "protocol": "ANEX-Handshaking"
 	}
 	```
 
@@ -159,8 +159,8 @@ The PAEX protocol consists of the following key phases:
 	    "modification": "Please provide your owner’s email for verification."
 	  },
 	  "language": "JSON",
-	  "ontology": "PAEX-Ontology",
-	  "protocol": "PAEX-Handshaking"
+	  "ontology": "ANEX-Ontology",
+	  "protocol": "ANEX-Handshaking"
 	}
 	```
         
@@ -191,7 +191,7 @@ The PAEX protocol consists of the following key phases:
 	    }
 	  },
 	  "language": "JSON",
-	  "ontology": "PAEX-Ontology",
+	  "ontology": "ANEX-Ontology",
 	  "protocol": "FIPA-Contract-Net"
 	}
  	```
@@ -209,7 +209,7 @@ The PAEX protocol consists of the following key phases:
 	    }
 	  },
 	  "language": "JSON",
-	  "ontology": "PAEX-Ontology",
+	  "ontology": "ANEX-Ontology",
 	  "protocol": "FIPA-Contract-Net"
 	}
 	```    
@@ -230,8 +230,8 @@ The PAEX protocol consists of the following key phases:
 	    "meeting_times": ["2023-11-01T10:00:00Z", "2023-11-02T14:00:00Z"]
 	  },
 	  "language": "JSON",
-	  "ontology": "PAEX-Ontology",
-	  "protocol": "PAEX-Data-Exchange"
+	  "ontology": "ANEX-Ontology",
+	  "protocol": "ANEX-Data-Exchange"
 	}
  	```
     
@@ -249,8 +249,8 @@ The PAEX protocol consists of the following key phases:
 	    "message": "Session terminated."
 	  },
 	  "language": "JSON",
-	  "ontology": "PAEX-Ontology",
-	  "protocol": "PAEX-Termination"
+	  "ontology": "ANEX-Ontology",
+	  "protocol": "ANEX-Termination"
 	}
  	```    
 
@@ -282,7 +282,7 @@ The PAEX protocol consists of the following key phases:
 ### **5.4 Ontology Definition**
 
 - **Purpose:** The ontology provides a shared vocabulary and semantic framework that both agents use to interpret the content of messages consistently.
-- **Implementation:** Proposed basic PAEX ontology with common terms used in agent interactions:
+- **Implementation:** Proposed basic ANEX ontology with common terms used in agent interactions:
 	- `identity`
 	- `owner`
 	- `relation`
@@ -305,8 +305,8 @@ The PAEX protocol consists of the following key phases:
 	    "error": "Invalid authentication token."
 	  },
 	  "language": "JSON",
-	  "ontology": "PAEX-Ontology",
-	  "protocol": "PAEX-Handshaking"
+	  "ontology": "ANEX-Ontology",
+	  "protocol": "ANEX-Handshaking"
 	}
  	```
 
@@ -324,7 +324,7 @@ The PAEX protocol consists of the following key phases:
 #### **Interaction Flow**
 
 1. **Agent A Initiates Handshake:**
-    - Sends a self-identification message and declares PAEX compliance.
+    - Sends a self-identification message and declares ANEX compliance.
 2. **Agent A Requests Engagement:**
     - Proposes setting up a meeting.
 3. **Agent B Responds:**
@@ -418,7 +418,7 @@ The PAEX protocol consists of the following key phases:
 	from spade.behaviour import CyclicBehaviour
 	from spade.message import Message
 	
-	class PAEXAgent(Agent):
+	class ANEXAgent(Agent):
 	    class HandshakeBehaviour(CyclicBehaviour):
 	        async def run(self):
 	            msg = await self.receive(timeout=10)
@@ -445,7 +445,7 @@ The PAEX protocol consists of the following key phases:
   	```
    	const WebSocket = require('ws');
 	
-	class PAEXAgent {
+	class ANEXAgent {
 	    constructor() {
 	        this.ws = new WebSocket('wss://agent-server.com');
 	        this.ws.on('message', this.handleMessage.bind(this));
@@ -482,7 +482,7 @@ The PAEX protocol consists of the following key phases:
 
 ### **B. Sample Ontology Entries**
 
-- **PAEX-Ontology Terms:**
+- **ANEX-Ontology Terms:**
     - `identity`
     - `owner`
     - `relation`
@@ -492,4 +492,4 @@ The PAEX protocol consists of the following key phases:
 
 ---
 
-**Note:** This specification is designed to provide a foundation for the PAEX protocol using FIPA standards. Developers are encouraged to extend and adapt the protocol to meet specific requirements, keeping in mind the importance of security, compliance, and scalability as the system evolves.
+**Note:** This specification is designed to provide a foundation for the ANEX protocol using FIPA standards. Developers are encouraged to extend and adapt the protocol to meet specific requirements, keeping in mind the importance of security, compliance, and scalability as the system evolves.
