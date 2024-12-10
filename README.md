@@ -95,6 +95,9 @@ The ANEX protocol consists of the following key phases:
 #### **Step 2: Initiation of Engagement**
 
 - **Action:** Agent A sends an engagement request to Agent B.
+
+![mermaid-diagram-2024-12-09-231436](https://github.com/user-attachments/assets/7fe593d2-c221-4292-8770-03c68eab6f5d)
+
 - **Message Example:**
 	```
  	{
@@ -117,6 +120,9 @@ The ANEX protocol consists of the following key phases:
     - **Agree to Proceed:** Sends an `AGREE` message.
     - **Refuse to Proceed:** Sends a `REFUSE` message.
     - **Request Modification:** Sends a `PROPOSE` message with modifications.
+ 
+![mermaid-diagram-2024-12-09-231508](https://github.com/user-attachments/assets/76be782b-dfcb-4d33-9a8e-f6642cfd8630)
+
 - **Message Examples:**
     
     - **Agree:**
@@ -173,6 +179,8 @@ The ANEX protocol consists of the following key phases:
     - **Call for Proposal (CFP):** Agent A issues a CFP to Agent B, outlining the request and terms.
     - **Proposal Submission:** Agent B responds with a proposal, which may accept, decline, or modify the terms.
     - **Evaluation:** Agent A evaluates the proposal and decides to accept or reject.
+ 
+![mermaid-diagram-2024-12-09-231353](https://github.com/user-attachments/assets/c5506dcf-4596-423b-8e08-1fb0683b7115)
       
 - **CFP Message Example:**
 	```
