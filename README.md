@@ -1,6 +1,8 @@
 # Agent Negotiation & Exchange Protocol (ANEX) Draft
 
 > **Status (October 2026):** This draft was written in late 2024, before today's agent standards had settled. Since then, [A2A](https://a2a-protocol.org/) has become the common transport and discovery layer for agent-to-agent messaging. [MCP](https://modelcontextprotocol.io/) covers tool and data access, and the [Personal Agent Protocol (Poppy)](https://personalagentprotocol.org/) covers how a personal agent works with a *company*. Those standards replace much of the transport, handshake and authentication material below. What they don't yet address is the core of ANEX: **two people's agents negotiating terms with each other**, where each side states what it wants access to and what it promises about the data it receives, with social context as a trust signal. See [Section 1.1](#11-relation-to-current-standards).
+>
+> **[ANEX v0.2](spec/v0.2.md)** rebuilds the protocol on those standards: it is an A2A extension that uses RFC 9396 for access requests, W3C ODRL for promises, and Verifiable Credentials for identity, delegation and introductions. The rest of this page is the original v0.1 draft, kept for reference.
 
 ## **1. Introduction**
 
