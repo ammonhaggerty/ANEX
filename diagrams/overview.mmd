@@ -1,0 +1,41 @@
+flowchart LR
+    S["<b>engage</b><br/>purpose, owner identity,<br/>relation, AI disclosure"]:::init
+    Q{"ANEX<br/>supported?"}:::resp
+    FB["Plain-language fallback<br/>AI disclosure, request,<br/>stated promises"]:::both
+    H{"Human<br/>agrees?"}:::resp
+    E{"<b>engage-response</b>"}:::resp
+    P["<b>present</b><br/>delegation / identity<br/>credentials"]:::init
+    O["<b>offer</b><br/>requests + promises,<br/>signed"]:::init
+    R{"Other party reviews<br/>latest terms<br/>(owner policy)"}:::both
+    C["<b>counter</b><br/>signed, keeps the other<br/>side's required terms"]:::both
+    A["<b>Agreement record</b><br/>same terms,<br/>both signatures"]:::both
+    X["<b>data</b> exchange<br/>agreed items only"]:::both
+    D{"Done?"}:::both
+    V["<b>revoke</b><br/>duties apply,<br/>e.g. delete"]:::both
+    T(["Session ends"]):::stop
+
+    S --> Q
+    Q -- no --> FB --> H
+    H -- yes --> X
+    H -- no --> T
+    Q -- yes --> E
+    E -- conditions --> P --> E
+    E -- decline --> T
+    E -- accept --> O --> R
+    R -- counter --> C --> R
+    R -- "reject / max rounds" --> T
+    R -- accept --> A --> X --> D
+    D -- close --> T
+    D -- revoke --> V --> T
+
+    subgraph Legend
+        direction TB
+        L1["Initiator"]:::init
+        L2["Responder or human"]:::resp
+        L3["Either party"]:::both
+    end
+
+    classDef init fill:#16a34a,stroke:#15803d,color:#fff
+    classDef resp fill:#0ea5e9,stroke:#0284c7,color:#fff
+    classDef both fill:#6b7280,stroke:#4b5563,color:#fff
+    classDef stop fill:#1f2937,stroke:#111827,color:#fff

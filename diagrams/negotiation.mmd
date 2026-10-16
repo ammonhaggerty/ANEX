@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant A as Initiator
+    participant B as Responder
+    Note over A,B: Round 1
+    A->>B: offer (terms t1, signed)<br/>free/busy [required by initiator], email [optional]<br/>use for scheduling only, delete within 1 day, no distribution
+    Note over B: Owner policy check,<br/>may ask owner
+    B-->>A: counter (terms t2, ref t1, signed)<br/>drops email, adds no AI training [required by responder]
+    Note over A,B: Round 2
+    alt Terms acceptable
+        A->>B: accept (ref t2, signature)
+        Note over A,B: Agreement record: t2 + both signatures
+        B-->>A: data (agreement t2): free/busy
+        A->>B: close
+    else Counter removed or weakened a required term
+        A->>B: error: required-term-removed
+    else No agreement, or max_rounds reached
+        A->>B: reject
+    end

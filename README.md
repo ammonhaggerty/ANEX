@@ -10,7 +10,9 @@ The **Agent Negotiation & Exchange Protocol (ANEX)** is a handshake and data exc
 
 ANEX messages follow a speech-act style inspired by the **Foundation for Intelligent Physical Agents (FIPA)** Agent Communication Language: each message carries a performative (`INFORM`, `PROPOSE`, `AGREE`, …) that states its intent. FIPA is used here as vocabulary, not as a required runtime. This draft focuses on the handshake, negotiation and data exchange; security, identity and transport are expected to come from existing standards.
 
-<img width="1481" alt="ANEX flows" src="https://github.com/user-attachments/assets/54399dd3-5769-410d-b29a-996d8cd8c236">
+![ANEX flow overview](diagrams/overview.png)
+
+*Diagrams on this page show the v0.2 flow and message names. Sources are in [`diagrams/`](diagrams/).*
 
 ### **1.1 Relation to Current Standards**
 
@@ -111,7 +113,7 @@ The ANEX protocol consists of the following key phases:
 
 - **Action:** Agent A asks whether Agent B is willing to engage on a specific purpose. No data is requested yet.
 
-![mermaid-diagram-2024-12-09-231436](https://github.com/user-attachments/assets/7fe593d2-c221-4292-8770-03c68eab6f5d)
+![Discovery and activation](diagrams/discovery.png)
 
 - **Message Example:**
 	```
@@ -136,7 +138,7 @@ The ANEX protocol consists of the following key phases:
     - **Refuse to Proceed:** Sends a `REFUSE` message.
     - **Request Modification:** Sends a `PROPOSE` message with conditions.
 
-![mermaid-diagram-2024-12-09-231508](https://github.com/user-attachments/assets/76be782b-dfcb-4d33-9a8e-f6642cfd8630)
+![Engagement response handling](diagrams/engagement.png)
 
 - **Message Examples:**
 
@@ -195,7 +197,7 @@ The ANEX protocol consists of the following key phases:
     - **Proposal:** Agent B accepts the terms as-is, or counters by narrowing access and/or asking for more promises.
     - **Decision:** Agent A sends `ACCEPT-PROPOSAL` or `REJECT-PROPOSAL`. Agent A rejects if B drops a term A marked as required. Either side may iterate with further `PROPOSE` messages.
 
-![mermaid-diagram-2024-12-09-231353](https://github.com/user-attachments/assets/c5506dcf-4596-423b-8e08-1fb0683b7115)
+![Negotiation of terms](diagrams/negotiation.png)
 
 - **Reading the terms:**
     - `access` lists data about the **receiving agent's owner** that the sender is asking for.

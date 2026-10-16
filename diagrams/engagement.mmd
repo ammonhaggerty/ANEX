@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant A as Initiator
+    participant B as Responder
+    participant O as Responder's owner
+    A->>B: engage (purpose, owner, speaker: ai-agent, relation)
+    Note over B: Check owner policy, assurance level,<br/>introduction credential (task WORKING)
+    opt Outside owner policy
+        B->>O: Ask owner
+        O-->>B: Decision
+    end
+    alt Accept
+        B-->>A: engage-response: accept (task INPUT_REQUIRED)
+        Note over A,B: Initiator sends offer next
+    else Conditions
+        B-->>A: engage-response: conditions (task AUTH_REQUIRED)
+        A->>B: present (delegation / identity credentials)
+        B-->>A: engage-response: accept or decline
+    else Decline
+        B-->>A: engage-response: decline (task REJECTED)
+    end

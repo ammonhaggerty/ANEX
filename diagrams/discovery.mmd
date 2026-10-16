@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant A as Agent A (initiator)
+    participant B as Agent B (responder)
+    Note over A,B: Discovery (A2A Agent Card)
+    A->>B: GET Agent Card
+    B-->>A: Agent Card: capabilities.extensions lists ANEX v0.2<br/>(purposes, credential formats, jwks_uri, max_rounds)
+    alt ANEX supported
+        Note over A,B: Activation
+        A->>B: A2A message + A2A-Extensions header: engage
+        B-->>A: Response echoes A2A-Extensions: engage-response
+        Note over A,B: Structured ANEX session (one A2A task)
+    else No ANEX agent, or extension not echoed
+        Note over A,B: Plain-language fallback
+        A->>B: Text or email: AI disclosure, purpose, request, promises
+        B-->>A: Human reply, covered by the stated promises
+    end
